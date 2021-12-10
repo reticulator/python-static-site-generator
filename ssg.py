@@ -1,8 +1,8 @@
 import typer
-from ssg.site import Site
-import ssg.parsers
-import ssg.parsers
 
+from ssg.site import Site
+
+import ssg.parsers
 
 def main(source="content", dest="dist"):
     config = {
@@ -11,10 +11,10 @@ def main(source="content", dest="dist"):
         "parsers": [
             ssg.parsers.ResourceParser(), 
             ssg.parsers.MarkdownParser(), 
-            ssg.parsers.ReStructuredTextParser()
+            ssg.parsers.ReStructuredTextParser(),
         ],
     }
-    
+
     Site(**config).build()
 
 
